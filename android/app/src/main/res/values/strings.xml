@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NextCapacitorApp</string>
+    <string name="title_activity_main">NextCapacitorApp</string>
+    <string name="package_name">com.example.nextcap</string>
+    <string name="custom_url_scheme">com.example.nextcap</string>
+</resources>
