@@ -1,0 +1,23 @@
+{
+  "name": "mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "../../node_modules/.bin/next dev",
+    "build": "../../node_modules/.bin/next build",
+    "start": "../../node_modules/.bin/next start",
+    "lint": "eslint",
+    "sync": "pnpm build && pnpx cap sync",
+    "android": "pnpm run sync && pnpx cap open android",
+    "ios": "pnpm run sync && pnpx cap open ios"
+  },
+  "dependencies": {
+    "@workspace/deps": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "24.5.2",
+    "@types/react": "19.1.13",
+    "next": "15.5.3",
+    "typescript": "5.9.2"
+  }
+}

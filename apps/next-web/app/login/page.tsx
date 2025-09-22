@@ -117,8 +117,7 @@ export default function LoginPage() {
           <div className="mt-6">
             <Button
               onClick={handleGithubSignIn}
-              variant="outline"
-              className="w-full"
+              className="w-full border"
             >
               Sign in with GitHub
             </Button>

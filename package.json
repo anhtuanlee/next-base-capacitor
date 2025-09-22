@@ -2,31 +2,27 @@
   "name": "next-capacitor-mono",
   "private": true,
   "version": "0.1.0",
+  "packageManager": "pnpm@10.17.1",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages"
   ],
   "scripts": {
-    "build:web": "npm run -w apps/web build",
-    "build:mobile": "npm run -w apps/mobile build",
-    "dev:mobile": "npm run -w apps/mobile dev",
-    "mobile:sync": "npm run build:mobile && npx cap sync",
-    "mobile:sync:android": "npm run build:mobile && npx cap sync android",
-    "mobile:open:android": "npm run mobile:sync:android && npx cap open android",
-    "mobile:sync:ios": "npm run build:mobile && npx cap sync ios",
-    "android": "npm run mobile:sync:android && npx cap open android",
-    "ios": "npm run mobile:sync:ios && npx cap open ios"
+    "dev": "pnpm turbo run dev",
+    "build": "pnpm run build:web && pnpm run build:mobile",
+    "lint": "pnpm turbo run lint",
+    "build:web": "pnpm -C apps/next-web build",
+    "build:mobile": "pnpm -C apps/next-app build",
+    "dev:mobile": "pnpm -w --filter ./apps/next-app dev",
+    "mobile:sync": "pnpm build:mobile && pnpx cap sync",
+    "mobile:sync:android": "pnpm build:mobile && pnpx cap sync android",
+    "mobile:open:android": "pnpm mobile:sync:android && pnpx cap open android",
+    "mobile:sync:ios": "pnpm build:mobile && pnpx cap sync ios",
+    "android": "pnpm mobile:sync:android && pnpx cap open android",
+    "ios": "pnpm mobile:sync:ios && pnpx cap open ios"
   },
   "dependencies": {
-    "@capacitor/core": "^7.4.3",
-    "@tanstack/react-query": "^5.58.0",
-    "next": "15.5.3",
-    "next-auth": "^4.24.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "zustand": "^4.5.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.2"
+    "@workspace/deps": "workspace:*"
   },
   "devDependencies": {
     "@capacitor/android": "^7.4.3",
@@ -41,6 +37,7 @@
     "eslint-config-next": "15.5.3",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
+    "turbo": "^2.5.6",
     "typescript": "^5"
   }
 }

@@ -157,8 +157,7 @@ export default function SignupPage() {
           <div className="mt-6">
             <Button
               onClick={handleGithubSignUp}
-              variant="outline"
-              className="w-full"
+              className="w-full border"
             >
               Sign up with GitHub
             </Button>
