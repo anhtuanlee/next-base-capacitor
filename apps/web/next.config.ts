@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static export for Capacitor
-  output: "export",
+  // Web runs with server runtime (SSR) to support next-auth and APIs
+  experimental: {
+    externalDir: true,
+  },
   images: {
-    // Required for static export to avoid remote image optimization
     unoptimized: true,
   },
 };
