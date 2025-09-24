@@ -8,9 +8,9 @@
     "packages"
   ],
   "scripts": {
-    "dev": "pnpm turbo run dev",
+    "dev": "./packages/node_modules/.bin/turbo run dev",
     "build": "pnpm run build:web && pnpm run build:mobile",
-    "lint": "pnpm turbo run lint",
+    "lint": "./packages/node_modules/.bin/turbo run lint",
     "build:web": "pnpm -C apps/next-web build",
     "build:mobile": "pnpm -C apps/next-app build",
     "dev:mobile": "pnpm -w --filter ./apps/next-app dev",

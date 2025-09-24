@@ -1,9 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_*"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["apps/*/.next/**", "apps/*/out/**"],
+      "outputs": ["apps/next-web/.next/**", "apps/next-app/out/**"],
       "cache": true
     },
     "dev": {
@@ -12,6 +13,11 @@
     },
     "lint": {
       "outputs": []
+    },
+    "export": {
+      "dependsOn": ["^build"],
+      "outputs": ["apps/next-app/out/**"],
+      "cache": true
     }
   }
 }
